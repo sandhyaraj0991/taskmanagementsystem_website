@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Home Page</title>
+  <link rel="stylesheet"  href="../static/css/home.css">
+</head>
+<body background="../static/images/task.png" center no-repeat;>
+
+    <header>
+        <h1>Welcome, {{user}}!</h1>
+      </header>
+
+  <main>
+
+    <div class="card">
+      <a href="addtask">Add Task</a>
+    </div>
+
+    <div class="card">
+      <a href="viewalltasks">All Tasks</a>
+    </div>
+
+    <div class="card">
+      <a href="updatetask">Update Task </a>
+    </div>
+
+    <div class="card">
+      <a href="deletetask">Delete Task</a>
+    </div>
+
+    <div class="card">
+      <a href="logout">Logout</a>
+    </div>
+
+    <div class="card">
+      <a href="deleteaccount">Delete Account</a>
+    </div>
+  </main>
+
+</body>
+</html>

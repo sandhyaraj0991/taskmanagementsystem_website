@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Task </title>
+    <link rel="stylesheet"  href="../static/css/task.css">
+
+</head>
+
+<body background="../static/images/task.png";>
+
+    <h2>Update Task </h2>
+    <form action="/updatetask" method="POST">
+        
+    <table>
+        <thead>
+            <tr>
+                <th>Select</th>
+                <th>Task ID</th>
+                <th>User ID</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Due Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in sqldata %}
+            <tr>
+                <td><input type="checkbox" name="task_ids[]" value="{{ i[0] }}"></td>
+                <td>{{ i[0] }}</td>
+                <td>{{ i[1] }}</td>
+                <td>{{ i[2] }}</td>
+                <td>{{ i[3] }}</td>
+                <td>{{ i[4] }}</td>
+                <td>{{ i[5] }}</td>
+                <td>
+                    <!-- Dropdown list for status -->
+                    <select name="status_{{ i[0] }}">
+                        
+                        <option value="Complete" {% if i[6] == 'Complete' %}selected{% endif %}>Complete</option>
+                        <option value="Incomplete" {% if i[6] == 'Incomplete' %}selected{% endif %}>Incomplete</option>
+                        
+                    
+                    </select>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <button type="submit">Update</button>
+    
+    </form>
+</body>
+</html>
